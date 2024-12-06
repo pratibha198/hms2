@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import signupImg from "../assets/images/signup.gif"
 
 import { Link,useNavigate } from 'react-router-dom'
@@ -11,6 +11,7 @@ const Signup = () => {
   const [previewURl, setPreviewURL]=useState("")
   const [loading,setLoading] = useState(false);
   const [formData, setFormData] = useState({
+    name:"",
     email:"",
     password :"",
     photo:selectedFile,
@@ -31,8 +32,7 @@ const Signup = () => {
     setPreviewURL(data.url);
     setSelectedFile(data.url);
     setFormData({...formData,photo:data.url});
-    // we will use cloudinary to upload img
-    // console.log(file);
+    
   }
 
   const submitHandler = async event=>{
@@ -163,7 +163,7 @@ const Signup = () => {
               name="photo"
               id="customFile"
               onChange={handleFileInputChange}
-              accept='.jpg, .png' 
+              accept='.jpg,.png' 
               className='absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer'
               />
 

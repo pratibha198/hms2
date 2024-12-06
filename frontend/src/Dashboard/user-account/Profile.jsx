@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
-
-
+import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import uploadImageToCloudinary from '../../utils/uploadCloudinary'
-import { BASE_URL, token } from '../../config'
+import { BASE_URL,token } from '../../config'
 import {toast} from 'react-toastify'
 import HashLoader from "react-spinners/HashLoader"
-import { useEffect } from 'react'
 
 const Profile = ({user}) => {
 
@@ -24,9 +21,11 @@ const Profile = ({user}) => {
 
   });
   const navigate = useNavigate();
+
   useEffect(()=>{
-    setFormData({name:user.name, email:user.email, photo:user.photo, gender:user.gender, bloodType:user.bloodType})
+    setFormData({name: user.name, email:user.email,photo:user.photo, gender:user.gender,bloodType:user.bloodType})
   },[user])
+
   const handleInputChange = e =>{
     setFormData({...formData,[e.target.name]:e.target.value
     });
@@ -51,8 +50,7 @@ const Profile = ({user}) => {
         method:'put',
         headers:{
           'Content-Type':'application/json',
-          Authorization:  `Bearer ${token}`
-
+          Authorization:`Bearer ${token}`
         },
         body: JSON.stringify(formData)
       })
@@ -69,7 +67,6 @@ const Profile = ({user}) => {
       setLoading(false);
     }
   }
-
   return (
     <div className='mt-10'>
        <form onSubmit={submitHandler}>
@@ -83,7 +80,7 @@ const Profile = ({user}) => {
               className='w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none
               focus:border-b-primaryColor text-[16px] leading-7 text-headingColor
               placeholder:text-textColor  cursor-pointer'
-              required  
+              required
               />
             </div>
             <div className="mb-5">
@@ -105,13 +102,12 @@ const Profile = ({user}) => {
               type="password"
               placeholder="Password"
               name= "password"
-              value={formData.bloodType}
+              value={formData.password}
               onChange={handleInputChange }
               className='w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none
               focus:border-b-primaryColor text-[16px] leading-7 text-headingColor
-              placeholder:text-textColor  cursor-pointer'
-  
-              />
+              placeholder:text-textColor cursor-pointer'
+               />
             </div>
             <div className="mb-5">
               <input 
@@ -148,10 +144,10 @@ const Profile = ({user}) => {
           </div>
 
           <div className="mb-5 flex items-center gap-3">
-            {formData.photo && <figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-primaryColor flex items-center justify-center'>
+            {formData.photo && (<figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-primaryColor flex items-center justify-center'>
               <img src={formData.photo} alt="" className='w-full rounded-full'/>
 
-            </figure>}
+            </figure>)}
             <div className='relative w-[160px] h-[50px]'>
               <input 
               type="file"
@@ -165,7 +161,7 @@ const Profile = ({user}) => {
               <label htmlFor="customFile" className='absolute top-0 left-0 w-full h-full flex 
               items-center px-[0.75rem] py-[0.375rem] text-[15px] leading-6 overflow-hidden
               bg-[#0066ff46] text-headingColor font-semibold rounded-lg truncate cursor-pointer'>
-                {selectedFile?selectedFile:'Upload Photo '}
+                {selectedFile?selectedFile.name:"Upload Photo"}
               </label>
             </div>
 
@@ -176,7 +172,7 @@ const Profile = ({user}) => {
             disabled={loading && true}
             type='submit'
             className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">
-              {loading ? <HashLoader size={35} color="#ffffff"/>: 'Update'}
+              {loading ? <HashLoader size={25} color="#ffffff"/>: 'Update'}
             </button>
           </div>      
           </form>
