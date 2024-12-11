@@ -1,7 +1,39 @@
 import convertTime from "../../utils/convertTime"
+import {BASE_URL} from './../../config';
+import {toast} from 'react-toastify'
+import { Link, useNavigate } from "react-router-dom";
+
 
 const SidePanel = ({doctorId, ticketPrice, timeSlots}) => {
-  return (
+    const navigate = useNavigate();
+
+    const bookingHandler = async()=>{
+        // try{
+        //     const res = await fetch(`${BASE_URL}/bookings.checkout-session/${doctorId}`,{
+        //         method:'post',
+        //         headers:{
+        //             Authorization:`Bearer ${token}`
+        //         }
+        //     })
+        //     const data = await res.json()
+
+        //     if(!res.ok){
+        //         throw new Error(data.message +'Please try again')
+        //     }
+        //     if(data.session.url){
+        //         window.location.href = data.session.url
+        //     }
+            
+        // }
+        // catch(err){
+        //     toast.error(err.message)    
+        // }
+        navigate("/checkout-success");
+
+        console.log("hello");
+    }
+
+    return (
     <div className='shadow-panelShadow p-3 lg:p-5 rounded-md'>
         <div className="felx items-center justify-between">
             <p className="text__para mt-0 font-semibold">
@@ -52,9 +84,11 @@ const SidePanel = ({doctorId, ticketPrice, timeSlots}) => {
                 </li> */}
             </ul>
         </div>
-        <button className='btn px-2 w-full rounded-md'>
+        <button onClick={bookingHandler} className='btn px-2 w-full rounded-md'>
             Book Appointment
         </button>
+
+        
     </div>
   )
 }
