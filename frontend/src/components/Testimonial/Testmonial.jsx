@@ -33,7 +33,7 @@ const Testmonial = () => {
                     <img src={patientAvatar} alt="" />
                     <div>
                         <h4 className='text-[18px] leading-[30px] font-semibold text-headingColor'>
-                            Muhbeer Rehman  
+                           Sanvi Gupta
                         </h4>
                         <div className="flex items-center gap-[2px]">
                             <HiStar className='text-yellowColor w-[18px] h-5'/>
@@ -53,7 +53,7 @@ const Testmonial = () => {
                     <img src={patientAvatar} alt="" />
                     <div>
                         <h4 className='text-[18px] leading-[30px] font-semibold text-headingColor'>
-                            Muhbeer Rehman  
+                            Arvind Pathak
                         </h4>
                         <div className="flex items-center gap-[2px]">
                             <HiStar className='text-yellowColor w-[18px] h-5'/>
@@ -73,7 +73,7 @@ const Testmonial = () => {
                     <img src={patientAvatar} alt="" />
                     <div>
                         <h4 className='text-[18px] leading-[30px] font-semibold text-headingColor'>
-                            Muhbeer Rehman  
+                            Yogita Barela
                         </h4>
                         <div className="flex items-center gap-[2px]">
                             <HiStar className='text-yellowColor w-[18px] h-5'/>
@@ -93,7 +93,7 @@ const Testmonial = () => {
                     <img src={patientAvatar} alt="" />
                     <div>
                         <h4 className='text-[18px] leading-[30px] font-semibold text-headingColor'>
-                            Muhbeer Rehman  
+                            Harshit Shrivastava
                         </h4>
                         <div className="flex items-center gap-[2px]">
                             <HiStar className='text-yellowColor w-[18px] h-5'/>

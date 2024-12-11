@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'; 
-import aboutImg from '../../assets/images/about.png'
+// import aboutImg from '../../assets/images/about.png'
+import aboutImg from '../../assets/images/dc3.jpg'
 import aboutCardImg from '../../assets/images/about-card.png'
 export const About = () => {
   return <section>

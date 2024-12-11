@@ -1,5 +1,6 @@
 import React from 'react'
 import { About } from '../components/About/About'
+import ladki1 from "../assets/images/ladki1.jpeg"
 import heroImg01 from '../assets/images/hero-img01.png'
 import heroImg02 from '../assets/images/hero-img02.png'
 import heroImg03 from '../assets/images/hero-img03.png'
@@ -7,8 +8,10 @@ import icon01 from '../assets/images/icon01.png'
 import icon02 from '../assets/images/icon02.png'
 import icon03 from '../assets/images/icon03.png'
 import videoIcon from '../assets/images/video-icon.png';
-import featureImg from '../assets/images/feature-img.png'
-import faqImg from '../assets/images/faq-img.png';
+// import featureImg from '../assets/images/feature-img.png';
+import featureImg from '../assets/images/dc4.jpg';
+import faqImg from '../assets/images/dc2.jpeg';
+// import faqImg from '../assets/images/faq-img.png';
 import avatarIcon from '../assets/images/avatar-icon.png'
 import {Link} from 'react-router-dom';
 import {BsArrowRight} from 'react-icons/bs';
@@ -32,7 +35,10 @@ const Home = () => {
                 We help patients live a healthy, longer life.
               </h1>
               <p className='text__para'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              The Unified Health Interface (UHI) in India is a pivotal initiative aimed at
+enhancing the digital health ecosystem by integrating various health services and
+stakeholders. Its primary objective is to create a unified digital platform that
+facilitates better coordination and accessibility across the healthcare system.
               </p>
               <button className='btn'>Request an Appointment</button>
             </div>
@@ -70,7 +76,7 @@ const Home = () => {
 
         <div className='flex gap-[30px] justify-end'>
           <div>
-            <img className='w-full' src={heroImg01} alt="" />
+            <img className='w-full rounded-lg' src={ladki1} alt="" />
           </div>
           <div className='mt-[30px]'>
             <img src={heroImg02} alt="" className='w-full mb-[30px]'/>
@@ -199,7 +205,7 @@ const Home = () => {
           </div>
           {/* feature image */}
           <div className='relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0'>
-            <img src={featureImg} className='w-3/4' alt="" />
+            <img src={featureImg} className='w-4/4 rounded-md' alt="" />
 
             <div className='w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0 md:bottom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]'>
               <div className="flex items-center justify-between"> 
@@ -223,7 +229,7 @@ const Home = () => {
               <div className='flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px]'>
                 <img src={avatarIcon} alt="" />
                 <h4 className='text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor'>
-                  Wayne Collins
+                  Ankit Agrawal
                 </h4>
 
 
